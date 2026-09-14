@@ -677,29 +677,29 @@ export function Hero() {
                 </a>
               </div>
 
-              {/* Credentials Grid under buttons */}
-              <div className="pt-5 sm:pt-6 border-t border-white/10 grid grid-cols-1 min-[360px]:grid-cols-3 gap-3 sm:gap-4 max-w-xl reveal-up delay-350">
-                <div className="flex flex-col">
-                  <span className="text-[9px] sm:text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-0.5 sm:mb-1">
+              {/* Credentials Section under buttons */}
+              <div className="pt-4 sm:pt-6 border-t border-white/10 flex flex-col min-[460px]:grid min-[460px]:grid-cols-3 gap-2 sm:gap-4 max-w-xl reveal-up delay-350">
+                <div className="flex items-center justify-between min-[460px]:flex-col min-[460px]:items-start py-1 min-[460px]:py-0 border-b min-[460px]:border-b-0 border-white/5">
+                  <span className="text-[9.5px] sm:text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-0 min-[460px]:mb-1 shrink-0">
                     BACKGROUND
                   </span>
-                  <span className="text-xs sm:text-sm md:text-base font-bold text-white tracking-tight">
+                  <span className="text-xs sm:text-sm md:text-base font-bold text-white tracking-tight whitespace-nowrap">
                     IT Graduate
                   </span>
                 </div>
-                <div className="flex flex-col border-t min-[360px]:border-t-0 min-[360px]:border-l border-white/10 pt-2 min-[360px]:pt-0 min-[360px]:pl-3 sm:pl-4">
-                  <span className="text-[9px] sm:text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-0.5 sm:mb-1">
+                <div className="flex items-center justify-between min-[460px]:flex-col min-[460px]:items-start py-1 min-[460px]:py-0 border-b min-[460px]:border-b-0 min-[460px]:border-l border-white/5 min-[460px]:border-white/10 min-[460px]:pl-3 sm:pl-4">
+                  <span className="text-[9.5px] sm:text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-0 min-[460px]:mb-1 shrink-0">
                     INTERNSHIP
                   </span>
-                  <span className="text-xs sm:text-sm md:text-base font-bold text-white tracking-tight">
+                  <span className="text-xs sm:text-sm md:text-base font-bold text-white tracking-tight whitespace-nowrap">
                     Hywiz Technology
                   </span>
                 </div>
-                <div className="flex flex-col border-t min-[360px]:border-t-0 min-[360px]:border-l border-white/10 pt-2 min-[360px]:pt-0 min-[360px]:pl-3 sm:pl-4">
-                  <span className="text-[9px] sm:text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-0.5 sm:mb-1">
+                <div className="flex items-center justify-between min-[460px]:flex-col min-[460px]:items-start py-1 min-[460px]:py-0 min-[460px]:border-l border-white/10 min-[460px]:pl-3 sm:pl-4">
+                  <span className="text-[9.5px] sm:text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-0 min-[460px]:mb-1 shrink-0">
                     PRIMARY FOCUS
                   </span>
-                  <span className="text-xs sm:text-sm md:text-base font-bold text-white tracking-tight">
+                  <span className="text-xs sm:text-sm md:text-base font-bold text-white tracking-tight whitespace-nowrap">
                     Web &amp; AI Integration
                   </span>
                 </div>
