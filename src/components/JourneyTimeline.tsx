@@ -30,7 +30,7 @@ const MILESTONES: Milestone[] = [
     description:
       "Completed BS Information Technology from University of Agriculture (2022–2026) with core emphasis on software architecture, web development, data structures, and modern computing.",
     tags: ["Software Engineering", "Algorithms", "Data Structures"],
-    icon: <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-[#38BDF8]" />,
+    icon: <GraduationCap className="w-4 h-4 sm:w-6 sm:h-6 text-[#38BDF8]" />,
   },
   {
     id: "milestone-02",
@@ -46,7 +46,7 @@ const MILESTONES: Milestone[] = [
       "Team Collaboration",
       "Agile Delivery",
     ],
-    icon: <Briefcase className="w-5 h-5 sm:w-6 sm:h-6 text-[#38BDF8]" />,
+    icon: <Briefcase className="w-4 h-4 sm:w-6 sm:h-6 text-[#38BDF8]" />,
   },
   {
     id: "milestone-03",
@@ -62,7 +62,7 @@ const MILESTONES: Milestone[] = [
       "Responsive Design",
       "4 Build Projects",
     ],
-    icon: <Code2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#38BDF8]" />,
+    icon: <Code2 className="w-4 h-4 sm:w-6 sm:h-6 text-[#38BDF8]" />,
   },
   {
     id: "milestone-04",
@@ -78,7 +78,7 @@ const MILESTONES: Milestone[] = [
       "Responsive Tuning",
       "Client Handoff",
     ],
-    icon: <Layout className="w-5 h-5 sm:w-6 sm:h-6 text-[#38BDF8]" />,
+    icon: <Layout className="w-4 h-4 sm:w-6 sm:h-6 text-[#38BDF8]" />,
   },
   {
     id: "milestone-05",
@@ -94,7 +94,7 @@ const MILESTONES: Milestone[] = [
       "Backend Microservices",
       "Continuous Growth",
     ],
-    icon: <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#38BDF8]" />,
+    icon: <Sparkles className="w-4 h-4 sm:w-6 sm:h-6 text-[#38BDF8]" />,
   },
 ];
 
@@ -137,10 +137,10 @@ export function JourneyTimeline() {
         </div>
 
         {/* Timeline Container */}
-        <div className="relative mt-12">
+        <div className="relative mt-8 sm:mt-12">
           {/* Vertical Connecting Line */}
           <div
-            className="absolute left-6 sm:left-8 top-8 bottom-8 w-[2px] -translate-x-1/2 pointer-events-none"
+            className="absolute left-4 min-[380px]:left-5 sm:left-8 top-6 sm:top-8 bottom-6 sm:bottom-8 w-[2px] -translate-x-1/2 pointer-events-none"
             style={{
               background:
                 "linear-gradient(180deg, #38BDF8 0%, #2563EB 50%, #D4AF37 100%)",
@@ -148,17 +148,17 @@ export function JourneyTimeline() {
           />
 
           {/* Milestone Items */}
-          <div className="space-y-10 sm:space-y-12">
+          <div className="space-y-6 sm:space-y-12">
             {MILESTONES.map((item, index) => (
               <div
                 key={item.id}
-                className="relative flex items-start gap-5 sm:gap-8 reveal-up"
+                className="relative flex items-start gap-2.5 min-[380px]:gap-4 sm:gap-8 reveal-up"
                 style={{ transitionDelay: `${index * 120}ms` }}
               >
                 {/* Timeline Circle Node */}
-                <div className="relative z-10 shrink-0">
+                <div className="relative z-10 shrink-0 mt-1 sm:mt-0">
                   <div
-                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-all duration-300 shadow-[0_0_22px_rgba(56,189,248,0.3)] group-hover:scale-110"
+                    className="w-8 h-8 min-[380px]:w-10 min-[380px]:h-10 sm:w-16 sm:h-16 rounded-full flex items-center justify-center transition-all duration-300 shadow-[0_0_22px_rgba(56,189,248,0.3)] group-hover:scale-110"
                     style={{
                       background: "linear-gradient(135deg, #071326 0%, #0d1e35 100%)",
                       border: "2px solid #38BDF8",
@@ -170,7 +170,7 @@ export function JourneyTimeline() {
 
                 {/* Milestone Card */}
                 <div
-                  className="flex-1 rounded-2xl sm:rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1"
+                  className="flex-1 min-w-0 rounded-xl sm:rounded-3xl p-3.5 min-[380px]:p-5 sm:p-8 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                   style={{
                     background: "rgba(13, 30, 53, 0.75)",
                     backdropFilter: "blur(16px)",
@@ -191,34 +191,34 @@ export function JourneyTimeline() {
                   }}
                 >
                   {/* Top Bar: Milestone Badge + Category */}
-                  <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wide text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/25">
+                  <div className="flex items-center justify-between gap-2 mb-2 sm:mb-3">
+                    <span className="inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold tracking-wide text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/25 shrink-0">
                       {item.milestoneNumber}
                     </span>
-                    <span className="text-xs font-mono tracking-wider text-[#94A3B8] uppercase">
+                    <span className="text-[9px] min-[360px]:text-[10px] sm:text-xs font-mono tracking-wider text-[#94A3B8] uppercase truncate text-right">
                       {item.category}
                     </span>
                   </div>
 
                   {/* Title & Subtitle */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-1">
+                  <h3 className="text-sm min-[360px]:text-base sm:text-2xl font-bold text-white tracking-tight leading-snug mb-1 break-words">
                     {item.title}
                   </h3>
-                  <div className="text-xs sm:text-sm font-semibold text-[#38BDF8] mb-3.5">
+                  <div className="text-[11px] min-[360px]:text-xs sm:text-sm font-semibold text-[#38BDF8] mb-2 sm:mb-3.5 leading-snug">
                     {item.subtitle}
                   </div>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-white leading-relaxed mb-5">
+                  <p className="text-[11px] min-[360px]:text-xs sm:text-sm text-slate-300 leading-relaxed mb-3 sm:mb-5 font-normal">
                     {item.description}
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 pt-2 border-t border-white/5">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-2 sm:pt-2.5 border-t border-white/10">
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 rounded-lg text-xs font-medium text-[#94A3B8] transition-colors hover:text-white"
+                        className="px-2 py-0.5 min-[360px]:px-2.5 sm:px-3 sm:py-1 rounded-md sm:rounded-lg text-[9.5px] min-[360px]:text-[10.5px] sm:text-xs font-medium text-[#94A3B8] transition-colors hover:text-white"
                         style={{
                           background: "rgba(15, 33, 61, 0.7)",
                           border: "1px solid rgba(56, 189, 248, 0.15)",
