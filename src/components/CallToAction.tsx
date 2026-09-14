@@ -118,14 +118,14 @@ export function CallToAction({ type }: CallToActionProps) {
     ];
 
     return (
-      <section className="w-full py-10 sm:py-14 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="w-full py-10 sm:py-14 px-3 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative group">
           {/* Ambient subtle glow behind card */}
           <div className="absolute -inset-1.5 bg-gradient-to-r from-[#D4AF37]/20 via-[#38BDF8]/15 to-[#D4AF37]/20 rounded-[36px] blur-2xl opacity-60 group-hover:opacity-85 transition duration-700 pointer-events-none" />
 
           {/* Dark Luxury Glassmorphism card container */}
           <div
-            className="relative rounded-[28px] sm:rounded-[36px] px-6 py-12 sm:px-14 sm:py-14 shadow-[0_25px_60px_rgba(0,0,0,0.7)] flex flex-col items-center text-center overflow-hidden reveal-scale"
+            className="relative rounded-[28px] sm:rounded-[36px] px-3.5 py-10 sm:px-14 sm:py-14 shadow-[0_25px_60px_rgba(0,0,0,0.7)] flex flex-col items-center text-center overflow-hidden reveal-scale"
             style={{
               background: "linear-gradient(135deg, rgba(10, 22, 40, 0.95) 0%, rgba(5, 12, 26, 0.98) 50%, rgba(13, 30, 53, 0.95) 100%)",
               border: "1.5px solid rgba(212, 175, 55, 0.35)",
@@ -160,9 +160,9 @@ export function CallToAction({ type }: CallToActionProps) {
             />
 
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 mb-5 sm:mb-6 shadow-sm reveal-down relative z-10">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 mb-5 sm:mb-6 shadow-sm reveal-down relative z-10 max-w-full">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse shrink-0" />
-              <span className="text-[11px] sm:text-xs font-bold tracking-wider text-[#D4AF37] uppercase font-mono">
+              <span className="text-[9.5px] min-[360px]:text-[11px] sm:text-xs font-bold tracking-tight min-[360px]:tracking-wider text-[#D4AF37] uppercase font-mono whitespace-nowrap">
                 FOR HIRING MANAGERS &amp; RECRUITERS
               </span>
             </div>
