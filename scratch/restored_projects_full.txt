@@ -1,0 +1,104 @@
+    },
+    liveUrl: "#",
+    githubUrl: "https://github.com/sehariftikhar",
+  },
+  {
+    id: "hywiz-technology",
+    title: "Hywiz Technology Corporate Platform",
+    tagline: "Bespoke WordPress & Elementor Pro corporate agency website with custom PHP hooks",
+    category: "WordPress",
+    role: "WordPress & Elementor Developer",
+    year: "2024",
+    clientOrContext: "Hywiz Technology, Burewala",
+    image: "/images/hywiz-wordpress.jpg",
+    description:
+      "Engineered a scalable, corporate technology agency website on WordPress & Elementor Pro, featuring custom services breakdown, lead generation forms, and sub-1.2s Core Web Vitals optimization.",
+    longDescription:
+      "Developed during hands-on immersion at Hywiz Technology. Features bespoke Elementor theme templates, responsive tuning for mobile and tablet, tailored contact inquiry workflows, and stripped-down CSS bloat for maximum performance.",
+    technologies: [
+      "WordPress",
+      "Elementor Pro",
+      "Custom CSS3",
+      "PHP Hooks",
+      "Responsive Design",
+      "Core Web Vitals",
+    ],
+    stats: {
+      value: "98/100",
+      label: "PageSpeed Performance",
+    },
+    highlights: [
+      "Custom Elementor Pro templates tailored to IT & software agency service catalogs.",
+      "Wrote bespoke PHP filters in functions.php to eliminate heavy default block bloat.",
+      "Integrated automated consultation intake and responsive interactive contact forms.",
+      "Optimized media delivery and asset caching for instant cross-device rendering.",
+    ],
+    codeSnippet: {
+      language: "php",
+      filename: "functions-optimization.php",
+      code: `add_action('wp_enqueue_scripts', function() {
+    if (!is_admin() && !is_user_logged_in()) {
+        wp_dequeue_style('wp-block-library');
+        wp_dequeue_style('classic-theme-styles');
+        wp_deregister_script('wp-embed');
+    }
+}, 99);
+
+add_filter('elementor/frontend/print_google_fonts', '__return_false');`,
+    },
+    visualTheme: {
+      primaryColor: "#0284C7",
+      accentGlow: "rgba(2, 132, 199, 0.25)",
+      badgeText: "WORDPRESS · ELEMENTOR PRO",
+    },
+    liveUrl: "#",
+    githubUrl: "https://github.com/sehariftikhar",
+  },
+  {
+    id: "sehar-wordpress-portfolio",
+    title: "Sehar Iftikhar WordPress Portfolio",
+    tagline: "Custom WordPress & Elementor personal brand portfolio with responsive tuning",
+    category: "WordPress",
+    role: "Full Stack WordPress Developer",
+    year: "2024",
+    clientOrContext: "Personal Portfolio Production",
+    image: "/images/sehar-wordpress.jpg",
+    description:
+      "Designed and engineered an elegant personal brand portfolio in WordPress using Elementor, featuring gold & midnight aesthetics, interactive case studies, and fast mobile navigation.",
+    longDescription:
+      "A self-managed personal portfolio build demonstrating expertise in WordPress CMS customization, custom header navigation, fluid typography, and bespoke widget styling.",
+    technologies: [
+      "WordPress",
+      "Elementor Pro",
+      "Custom PHP",
+      "Responsive CSS",
+      "Fluid Typography",
+      "SEO Optimization",
+    ],
+    stats: {
+      value: "100%",
+      label: "Responsive Mobile Tuning",
+    },
+    highlights: [
+      "Crafted custom hero and project showcase widgets using Elementor Pro.",
+      "Fluid typography and modern spacing providing a seamless reader experience on all devices.",
+      "Clean SEO metadata structure and optimized image delivery pipeline.",
+      "Bespoke contact drawer and CV download integrations.",
+    ],
+    codeSnippet: {
+      language: "php",
+      filename: "elementor-custom-widgets.php",
+      code: `add_action('elementor/widgets/register', function($widgets_manager) {
+    require_once(__DIR__ . '/widgets/custom-portfolio-showcase.php');
+    $widgets_manager->register(new \\Sehar_Portfolio_Widget());
+});`,
+    },
+    visualTheme: {
+      primaryColor: "#D4AF37",
+      accentGlow: "rgba(212, 175, 55, 0.25)",
+      badgeText: "WORDPRESS · PERSONAL PORTFOLIO",
+    },
+    liveUrl: "#",
+    githubUrl: "https://github.com/sehariftikhar",
+  },
+];
