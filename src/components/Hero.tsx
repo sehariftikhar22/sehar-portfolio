@@ -305,7 +305,7 @@ function TechConstellationSphere() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[300px] min-[380px]:max-w-[420px] sm:max-w-[560px] lg:max-w-[620px] xl:max-w-[660px] aspect-square flex items-center justify-center select-none overflow-hidden"
+      className="relative w-full max-w-[300px] min-[380px]:max-w-[420px] sm:max-w-[560px] lg:max-w-[620px] xl:max-w-[660px] aspect-square flex items-center justify-center select-none"
     >
       {/* Background Radial Glow Blooming */}
       <div
@@ -336,10 +336,10 @@ function TechConstellationSphere() {
 
       {/* Floating Status Pill 1: Top Right */}
       <div
-        className="absolute -top-1 sm:top-1 right-0 sm:right-2 z-30 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full backdrop-blur-md shadow-2xl transition-transform hover:scale-105 max-w-[80%]"
+        className="absolute top-1 sm:top-2 right-1 sm:right-3 z-30 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full backdrop-blur-md shadow-2xl transition-transform hover:scale-105 max-w-[85%]"
         style={{
-          background: "rgba(10, 22, 40, 0.88)",
-          border: "1.5px solid rgba(212, 175, 55, 0.45)",
+          background: "rgba(10, 22, 40, 0.92)",
+          border: "1.5px solid rgba(212, 175, 55, 0.55)",
           boxShadow: "0 0 20px rgba(212, 175, 55, 0.25)",
         }}
       >
@@ -351,10 +351,10 @@ function TechConstellationSphere() {
 
       {/* Floating Status Pill 2: Bottom Left */}
       <div
-        className="absolute bottom-1 sm:bottom-3 left-0 sm:left-2 z-30 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full backdrop-blur-md shadow-2xl transition-transform hover:scale-105 max-w-[80%]"
+        className="absolute bottom-1 sm:bottom-3 left-1 sm:left-3 z-30 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full backdrop-blur-md shadow-2xl transition-transform hover:scale-105 max-w-[85%]"
         style={{
-          background: "rgba(10, 22, 40, 0.88)",
-          border: "1.5px solid rgba(6, 182, 212, 0.4)",
+          background: "rgba(10, 22, 40, 0.92)",
+          border: "1.5px solid rgba(6, 182, 212, 0.45)",
           boxShadow: "0 0 20px rgba(6, 182, 212, 0.2)",
         }}
       >
