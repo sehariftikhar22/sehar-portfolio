@@ -103,7 +103,7 @@ export function Header() {
 
           {/* Right CTA */}
           <div className="hidden lg:block">
-            <a href="mailto:sehariftikhar.dev@gmail.com">
+            <a href="mailto:sehariftikhar187@gmail.com">
               <button className="my-button-1 text-sm">
                 Let&apos;s Connect ✦
               </button>
@@ -147,7 +147,7 @@ export function Header() {
             ))}
             <div className="pt-2">
               <a
-                href="mailto:sehariftikhar.dev@gmail.com"
+                href="mailto:sehariftikhar187@gmail.com"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full block"
               >
