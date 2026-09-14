@@ -56,8 +56,8 @@ function StackCard({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Stepped sticky top offset: compact on mobile, original 85 + index * 26 on desktop
-  const topOffset = isMobile ? 68 + index * 12 : 85 + index * 26;
+  // Stepped sticky top offset: compact on mobile (56px for navbar + 10px per stacked tab), 85 + index * 26 on desktop
+  const topOffset = isMobile ? 56 + index * 10 : 85 + index * 26;
 
   const catStyle = CATEGORY_COLORS[project.category] || {
     bg: "rgba(212, 175, 55, 0.15)",
@@ -70,7 +70,9 @@ function StackCard({
   return (
     <div
       className={`flex items-start justify-center sticky ${
-        isLast ? "min-h-0 pb-2" : "min-h-[min(85vh,700px)]"
+        isLast
+          ? "min-h-0 pb-4"
+          : "min-h-[500px] min-[360px]:min-h-[540px] sm:min-h-[min(85vh,720px)] mb-6 sm:mb-12"
       }`}
       style={{
         top: `${topOffset}px`,
@@ -107,17 +109,17 @@ function StackCard({
           />
 
           {/* Card Interior Grid */}
-          <div className="p-4 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 lg:gap-10 items-center">
+          <div className="p-3.5 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 lg:gap-10 items-center">
             {/* Left Column: Details */}
             <div className="lg:col-span-7 space-y-3 sm:space-y-4 lg:space-y-5">
               {/* Top Row: Index + Category + Year */}
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs font-bold text-[#D4AF37] tracking-wider">
+              <div className="flex flex-wrap items-center justify-between gap-2.5 sm:gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="font-mono text-xs font-bold text-[#D4AF37] tracking-wider whitespace-nowrap">
                     CASE STUDY // 0{index + 1}
                   </span>
                   <span
-                    className="px-3 py-1 rounded-full text-[11px] font-bold tracking-wide flex items-center gap-1.5"
+                    className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide flex items-center gap-1.5 whitespace-nowrap"
                     style={{
                       backgroundColor: catStyle.bg,
                       color: catStyle.text,
@@ -125,14 +127,14 @@ function StackCard({
                     }}
                   >
                     <span
-                      className="w-1.5 h-1.5 rounded-full"
+                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                       style={{ backgroundColor: catStyle.text }}
                     />
                     {project.category}
                   </span>
                 </div>
 
-                <span className="text-xs font-mono text-[#94A3B8] px-2.5 py-0.5 rounded bg-white/[0.04] border border-white/10">
+                <span className="text-xs font-mono text-[#94A3B8] px-2.5 py-0.5 rounded bg-white/[0.04] border border-white/10 whitespace-nowrap">
                   {project.year}
                 </span>
               </div>
@@ -319,20 +321,22 @@ export function CreativePortfolio() {
   return (
     <section
       id="portfolio"
-      className="w-full py-10 sm:py-14 relative overflow-hidden"
+      className="w-full py-10 sm:py-14 relative"
       style={{
         background: "linear-gradient(180deg, #050c1a 0%, #0a1628 50%, #050c1a 100%)",
       }}
     >
-      {/* Background ambient glow circles */}
-      <div
-        className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full pointer-events-none opacity-15 blur-[120px]"
-        style={{ background: "radial-gradient(circle, #D4AF37 0%, transparent 70%)" }}
-      />
-      <div
-        className="absolute bottom-1/4 right-0 sm:right-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full pointer-events-none opacity-15 blur-[120px]"
-        style={{ background: "radial-gradient(circle, #38BDF8 0%, transparent 70%)" }}
-      />
+      {/* Background ambient glow circles isolated in an overflow-hidden wrapper so they don't break sticky inheritance */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full opacity-15 blur-[120px]"
+          style={{ background: "radial-gradient(circle, #D4AF37 0%, transparent 70%)" }}
+        />
+        <div
+          className="absolute bottom-1/4 right-0 sm:right-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full opacity-15 blur-[120px]"
+          style={{ background: "radial-gradient(circle, #38BDF8 0%, transparent 70%)" }}
+        />
+      </div>
 
       <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

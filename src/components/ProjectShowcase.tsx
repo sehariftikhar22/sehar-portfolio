@@ -205,14 +205,14 @@ function ProjectLaptopCard({ project }: { project: (typeof SHOWCASE_PROJECTS)[0]
       </div>
 
       {/* Project Label & Details Below Laptop */}
-      <div className="mt-3 sm:mt-5 text-center max-w-[220px] sm:max-w-[320px]">
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 mb-1 group-hover:border-[#D4AF37]/40 transition-colors">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37]" />
-          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-[#94A3B8] group-hover:text-[#D4AF37] transition-colors">
+      <div className="mt-3 sm:mt-5 text-center w-full max-w-[280px] sm:max-w-[320px] flex flex-col items-center">
+        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/5 border border-white/10 mb-1.5 group-hover:border-[#D4AF37]/40 transition-colors whitespace-nowrap max-w-full">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] flex-shrink-0" />
+          <span className="text-[9.5px] min-[360px]:text-[10.5px] sm:text-[11px] font-semibold uppercase tracking-wider text-[#94A3B8] group-hover:text-[#D4AF37] transition-colors whitespace-nowrap">
             {project.type}
           </span>
         </div>
-        <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-[#D4AF37] transition-colors duration-300 leading-snug">
+        <h4 className="text-sm sm:text-base font-bold text-white group-hover:text-[#D4AF37] transition-colors duration-300 leading-snug whitespace-nowrap sm:whitespace-normal">
           {project.name}
         </h4>
         <p className="text-[11px] sm:text-xs text-[#94A3B8] font-normal mt-0.5 line-clamp-1">
@@ -257,7 +257,7 @@ export function ProjectShowcase() {
 
   return (
     <section
-      id="portfolio"
+      id="showcase"
       className="w-full py-10 sm:py-14 overflow-hidden"
       style={{ background: "linear-gradient(180deg, #0a1628 0%, #050c1a 100%)" }}
     >
