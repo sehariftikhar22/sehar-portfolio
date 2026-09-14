@@ -181,26 +181,29 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#contact" className="my-button-3 gap-2">
-                <MessageCircle className="w-4 h-4" />
-                Let&apos;s Talk
+            {/* CTA Buttons - Matched Exactly to Hero Section (2 in 1 Row) */}
+            <div className="mt-8 flex flex-row items-center gap-2 sm:gap-4 w-full sm:w-auto">
+              <a
+                href="#contact"
+                className="flex-1 sm:flex-initial my-button-2 !py-2.5 sm:!py-3 !px-2.5 sm:!px-6 !text-[11px] min-[360px]:!text-xs sm:!text-sm font-bold gap-1.5 sm:gap-2 shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40 cursor-pointer justify-center text-center h-11 sm:h-auto whitespace-nowrap"
+              >
+                <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                <span>Let&apos;s Talk</span>
               </a>
               <a
                 href="/sehar-iftikhar-cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Sehar_Iftikhar_CV.pdf"
-                className="my-button-4 gap-2 cursor-pointer"
+                className="flex-1 sm:flex-initial my-button-4 !py-2.5 sm:!py-3 !px-2.5 sm:!px-6 !text-[11px] min-[360px]:!text-xs sm:!text-sm font-bold gap-1.5 sm:gap-2 cursor-pointer hover:border-[#D4AF37] justify-center text-center h-11 sm:h-auto whitespace-nowrap"
                 onClick={() => {
                   if (typeof window !== "undefined") {
                     window.open("/sehar-iftikhar-cv.pdf", "_blank");
                   }
                 }}
               >
-                <Download className="w-4 h-4" />
-                Download CV
+                <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                <span>Download CV</span>
               </a>
             </div>
           </div>
