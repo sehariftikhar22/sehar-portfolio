@@ -300,7 +300,6 @@ function StackCard({
 }
 
 export function CreativePortfolio() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -309,14 +308,7 @@ export function CreativePortfolio() {
     offset: ["start start", "end end"],
   });
 
-  const categories = ["All", "AI & Automation", "Full Stack Web"];
-
   const portfolioProjects = PROJECTS.filter((p) => p.id !== "cognita-ai");
-
-  const filteredProjects =
-    selectedCategory === "All"
-      ? portfolioProjects
-      : portfolioProjects.filter((p) => p.category === selectedCategory);
 
   return (
     <section
@@ -367,44 +359,14 @@ export function CreativePortfolio() {
           <div className="custom-line mt-6 reveal-scale delay-200" />
         </div>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-12 reveal-up delay-150">
-          {categories.map((cat) => {
-            const isActive = selectedCategory === cat;
-            return (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className="px-5 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 cursor-pointer"
-                style={
-                  isActive
-                    ? {
-                        background: "linear-gradient(135deg, #D4AF37, #F0C842)",
-                        color: "#050c1a",
-                        boxShadow: "0 0 20px rgba(212,175,55,0.45)",
-                        transform: "scale(1.05)",
-                      }
-                    : {
-                        background: "rgba(13, 30, 53, 0.7)",
-                        color: "#94A3B8",
-                        border: "1px solid rgba(212, 175, 55, 0.2)",
-                      }
-                }
-              >
-                {cat}
-              </button>
-            );
-          })}
-        </div>
-
         {/* ─── STACK CARDS ANIMATED DECK CONTAINER ─── */}
-        <div ref={containerRef} className="relative pb-6 sm:pb-8">
-          {filteredProjects.map((project, index) => (
+        <div ref={containerRef} className="relative pb-6 sm:pb-8 mt-10 sm:mt-14">
+          {portfolioProjects.map((project, index) => (
             <StackCard
-              key={`${selectedCategory}-${project.id}`}
+              key={project.id}
               project={project}
               index={index}
-              total={filteredProjects.length}
+              total={portfolioProjects.length}
               progress={scrollYProgress}
               onSelect={(p) => setSelectedProject(p)}
             />
