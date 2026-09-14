@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CheckCircle2, MessageCircle } from "lucide-react";
 import { LinkedinIcon, GithubIcon } from "@/components/Icons";
 import confetti from "canvas-confetti";
 
@@ -39,36 +39,21 @@ export function ContactSection() {
     setSending(true);
 
     try {
-      // Formspree endpoint — replace YOUR_FORM_ID with actual ID from formspree.io
-      const res = await fetch("https://formspree.io/f/sehariftikhar", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        }),
-      });
+      const whatsappText = `Hello Sehar,\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Subject:* ${formData.subject}\n\n*Message:*\n${formData.message}`;
+      const whatsappUrl = `https://wa.me/923120186784?text=${encodeURIComponent(whatsappText)}`;
 
-      if (res.ok) {
-        setSubmitted(true);
-        confetti({
-          particleCount: 100,
-          spread: 80,
-          origin: { y: 0.6 },
-          colors: ["#D4AF37", "#F0C842", "#ffffff", "#A8860A"],
-        });
-      } else {
-        // Fallback: show success anyway (form filled correctly)
-        setSubmitted(true);
-        confetti({
-          particleCount: 80,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ["#D4AF37", "#F0C842", "#ffffff"],
-        });
+      // Automatically open WhatsApp chat in new tab with filled message
+      if (typeof window !== "undefined") {
+        window.open(whatsappUrl, "_blank");
       }
+
+      setSubmitted(true);
+      confetti({
+        particleCount: 100,
+        spread: 80,
+        origin: { y: 0.6 },
+        colors: ["#D4AF37", "#F0C842", "#ffffff", "#A8860A"],
+      });
     } catch {
       setSubmitted(true);
     } finally {
@@ -225,17 +210,46 @@ export function ContactSection() {
                 style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.3)" }}
               >
                 <CheckCircle2 className="w-14 h-14 text-[#10B981] mx-auto mb-3" />
-                <h4 className="text-xl font-bold text-white mb-2">Message Received! 🎉</h4>
+                <h4 className="text-xl font-bold text-white mb-2">Message Ready &amp; Sent! 🎉</h4>
                 <p className="text-sm text-[#94A3B8] leading-relaxed mb-6">
-                  Thank you, <strong className="text-white">{formData.name}</strong>! I&apos;ve received
-                  your message and will get back to you shortly.
+                  Thank you, <strong className="text-white">{formData.name}</strong>! Your message is ready.
+                  If your chat didn&apos;t open automatically, use the buttons below to reach me instantly:
                 </p>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+                  <a
+                    href={`https://wa.me/923120186784?text=${encodeURIComponent(
+                      `Hello Sehar,\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Subject:* ${formData.subject}\n\n*Message:*\n${formData.message}`
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#22C55E] text-white font-bold text-xs shadow-lg hover:brightness-110 transition-all cursor-pointer"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Open in WhatsApp</span>
+                  </a>
+
+                  <a
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=sehariftikhar187@gmail.com&su=${encodeURIComponent(
+                      `[Portfolio Contact] ${formData.subject}`
+                    )}&body=${encodeURIComponent(
+                      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#D4AF37] text-[#050c1a] font-bold text-xs shadow-lg hover:brightness-110 transition-all cursor-pointer"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>Open in Gmail</span>
+                  </a>
+                </div>
+
                 <button
                   onClick={() => {
                     setSubmitted(false);
                     setFormData({ name: "", email: "", subject: "", message: "", agreed: false });
                   }}
-                  className="my-button-3"
+                  className="text-xs text-[#94A3B8] hover:text-white underline cursor-pointer transition-colors"
                 >
                   Send Another Message
                 </button>
