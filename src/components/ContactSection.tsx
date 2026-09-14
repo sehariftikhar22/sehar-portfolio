@@ -101,8 +101,8 @@ export function ContactSection() {
     {
       icon: GithubIcon,
       label: "GitHub",
-      value: "sehariftikhar",
-      href: "https://github.com/sehariftikhar",
+      value: "sehariftikhar22",
+      href: "https://github.com/sehariftikhar22",
       color: "#94A3B8",
     },
     {

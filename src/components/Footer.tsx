@@ -51,7 +51,7 @@ export function Footer() {
     },
     {
       icon: GithubIcon,
-      href: "https://github.com/sehariftikhar",
+      href: "https://github.com/sehariftikhar22",
       label: "GitHub",
     },
     {

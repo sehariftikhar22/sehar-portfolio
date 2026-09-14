@@ -39,6 +39,21 @@ export function Header() {
     { name: "Contact",   href: "#contact",   id: "contact" },
   ];
 
+  const handleConnectClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (typeof window !== "undefined") {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = "mailto:sehariftikhar187@gmail.com";
+      } else {
+        window.open(
+          "https://mail.google.com/mail/?view=cm&fs=1&to=sehariftikhar187@gmail.com",
+          "_blank"
+        );
+      }
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
 
@@ -103,8 +118,11 @@ export function Header() {
 
           {/* Right CTA */}
           <div className="hidden lg:block">
-            <a href="mailto:sehariftikhar187@gmail.com">
-              <button className="my-button-1 text-sm">
+            <a
+              href="mailto:sehariftikhar187@gmail.com"
+              onClick={handleConnectClick}
+            >
+              <button className="my-button-1 text-sm cursor-pointer">
                 Let&apos;s Connect ✦
               </button>
             </a>
@@ -148,10 +166,13 @@ export function Header() {
             <div className="pt-2">
               <a
                 href="mailto:sehariftikhar187@gmail.com"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  handleConnectClick(e);
+                }}
                 className="w-full block"
               >
-                <button className="my-button-1 w-full">Let&apos;s Connect ✦</button>
+                <button className="my-button-1 w-full cursor-pointer">Let&apos;s Connect ✦</button>
               </a>
             </div>
           </div>
