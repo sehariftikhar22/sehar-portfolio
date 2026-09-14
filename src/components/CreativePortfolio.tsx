@@ -319,22 +319,22 @@ export function CreativePortfolio() {
   return (
     <section
       id="portfolio"
-      className="w-full py-10 sm:py-14 relative"
+      className="w-full py-10 sm:py-14 relative overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #050c1a 0%, #0a1628 50%, #050c1a 100%)",
       }}
     >
       {/* Background ambient glow circles */}
       <div
-        className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full pointer-events-none opacity-15 blur-[120px]"
+        className="absolute top-1/4 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full pointer-events-none opacity-15 blur-[120px]"
         style={{ background: "radial-gradient(circle, #D4AF37 0%, transparent 70%)" }}
       />
       <div
-        className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none opacity-15 blur-[120px]"
+        className="absolute bottom-1/4 right-0 sm:right-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full pointer-events-none opacity-15 blur-[120px]"
         style={{ background: "radial-gradient(circle, #38BDF8 0%, transparent 70%)" }}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-10">
           <div className="flex items-center justify-center gap-3 mb-3 reveal-down">

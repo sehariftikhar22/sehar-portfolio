@@ -196,10 +196,10 @@ export function SkillsGrid() {
   return (
     <section
       id="skills"
-      className="w-full py-10 sm:py-14"
+      className="w-full py-10 sm:py-14 overflow-hidden"
       style={{ background: "linear-gradient(180deg, #050c1a 0%, #0a1628 100%)" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
         {/* Heading */}
         <div className="text-center mb-4">
           <div className="flex items-center justify-center gap-3 mb-3 reveal-down">

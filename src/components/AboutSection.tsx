@@ -16,15 +16,15 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full py-10 sm:py-14"
+      className="w-full py-10 sm:py-14 overflow-hidden"
       style={{ background: "linear-gradient(180deg, #050c1a 0%, #0a1628 100%)" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
           {/* ── Left: Suhad-Style Multi-Image Collage ── */}
           <div className="w-full lg:w-5/12 flex justify-center reveal-left">
-            <div className="relative w-full max-w-[460px] pb-16 pt-4 px-2 sm:px-4">
+            <div className="relative w-full max-w-[460px] pb-14 sm:pb-16 pt-4 px-2 sm:px-4 mx-auto">
               {/* Background ambient glow */}
               <div
                 className="absolute inset-0 rounded-full pointer-events-none opacity-40 blur-3xl -z-10"
@@ -35,24 +35,24 @@ export function AboutSection() {
 
               {/* Floating Top Badge — Suhad Style */}
               <div
-                className="absolute -top-3 sm:-top-2 right-1 sm:right-3 z-30 rounded-2xl px-5 py-3 shadow-2xl transition-transform hover:scale-105 animate-float"
+                className="absolute -top-3 sm:-top-2 right-1 sm:right-3 z-30 rounded-2xl px-3.5 sm:px-5 py-2 sm:py-3 shadow-2xl transition-transform hover:scale-105 animate-float"
                 style={{
                   background: "linear-gradient(135deg, #7F1D1D 0%, #450A0A 100%)",
                   border: "1.5px solid rgba(239, 68, 68, 0.4)",
                   boxShadow: "0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(239, 68, 68, 0.25)",
                 }}
               >
-                <p className="text-2xl sm:text-3xl font-black text-white leading-none">
+                <p className="text-xl sm:text-3xl font-black text-white leading-none">
                   14+
                 </p>
-                <p className="text-[11px] font-semibold tracking-wide text-red-100/90 mt-1">
+                <p className="text-[10px] sm:text-[11px] font-semibold tracking-wide text-red-100/90 mt-0.5 sm:mt-1">
                   Finished Projects
                 </p>
               </div>
 
               {/* Main Photo Card (Suhad Style with rounded pill corners) */}
               <div
-                className="relative w-full h-[320px] sm:h-[370px] rounded-[32px] overflow-hidden group shadow-2xl"
+                className="relative w-full h-[280px] sm:h-[370px] rounded-[28px] sm:rounded-[32px] overflow-hidden group shadow-2xl"
                 style={{
                   border: "2px solid rgba(212,175,55,0.35)",
                   boxShadow: "0 20px 45px rgba(0,0,0,0.7), 0 0 35px rgba(212,175,55,0.12)",
@@ -75,7 +75,7 @@ export function AboutSection() {
 
               {/* Bottom-Left Overlapping Photo Card */}
               <div
-                className="absolute -bottom-4 sm:-bottom-6 -left-2 sm:-left-4 w-[160px] sm:w-[195px] h-[160px] sm:h-[195px] rounded-[24px] overflow-hidden z-20 group shadow-2xl"
+                className="absolute -bottom-3 sm:-bottom-6 left-0 sm:-left-4 w-[130px] min-[380px]:w-[160px] sm:w-[195px] h-[130px] min-[380px]:h-[160px] sm:h-[195px] rounded-[20px] sm:rounded-[24px] overflow-hidden z-20 group shadow-2xl"
                 style={{
                   border: "4px solid #0a1628",
                   boxShadow: "0 20px 35px rgba(0,0,0,0.8), 0 0 25px rgba(212,175,55,0.15)",
@@ -99,7 +99,7 @@ export function AboutSection() {
 
               {/* Bottom-Right Overlapping Photo Card */}
               <div
-                className="absolute -bottom-2 sm:-bottom-4 right-0 sm:right-2 w-[180px] sm:w-[220px] h-[140px] sm:h-[170px] rounded-[24px] overflow-hidden z-20 group shadow-2xl"
+                className="absolute -bottom-2 sm:-bottom-4 right-0 sm:right-2 w-[140px] min-[380px]:w-[180px] sm:w-[220px] h-[110px] min-[380px]:h-[140px] sm:h-[170px] rounded-[20px] sm:rounded-[24px] overflow-hidden z-20 group shadow-2xl"
                 style={{
                   border: "4px solid #0a1628",
                   boxShadow: "0 20px 35px rgba(0,0,0,0.8), 0 0 25px rgba(6,182,212,0.15)",

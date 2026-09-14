@@ -55,7 +55,7 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full max-w-full">
 
       {/* ── Main navigation bar ── */}
       <nav
@@ -70,11 +70,11 @@ export function Header() {
           boxShadow: isScrolled ? "0 4px 30px rgba(0,0,0,0.5)" : "none",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-3.5 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12 py-2.5 sm:py-3.5 flex items-center justify-between gap-2">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2.5 group">
+          <a href="#home" className="flex items-center gap-2 sm:gap-2.5 group shrink min-w-0">
             <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center text-[#050c1a] font-black text-lg shadow-md group-hover:scale-105 transition-transform"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center text-[#050c1a] font-black text-base sm:text-lg shadow-md group-hover:scale-105 transition-transform shrink-0"
               style={{
                 background: "linear-gradient(135deg, #D4AF37, #F0C842)",
                 boxShadow: "0 0 16px rgba(212,175,55,0.4)",
@@ -82,11 +82,11 @@ export function Header() {
             >
               S
             </div>
-            <div className="flex flex-col leading-none">
-              <span className="font-extrabold text-base tracking-tight text-white group-hover:text-[#D4AF37] transition-colors">
+            <div className="flex flex-col leading-none min-w-0">
+              <span className="font-extrabold text-sm sm:text-base tracking-tight text-white group-hover:text-[#D4AF37] transition-colors truncate">
                 SEHAR IFTIKHAR
               </span>
-              <span className="text-[9px] font-bold tracking-widest text-[#D4AF37] uppercase mt-0.5">
+              <span className="text-[8px] sm:text-[9px] font-bold tracking-widest text-[#D4AF37] uppercase mt-0.5 truncate">
                 Official Portfolio
               </span>
             </div>
@@ -108,7 +108,9 @@ export function Header() {
                   {isActive && (
                     <span
                       className="absolute bottom-0 left-0 w-full h-[2px] rounded-full"
-                      style={{ background: "linear-gradient(to right, #D4AF37, #F0C842)" }}
+                      style={{
+                        background: "linear-gradient(90deg, #D4AF37, #F0C842)",
+                      }}
                     />
                   )}
                 </a>
@@ -116,20 +118,21 @@ export function Header() {
             })}
           </div>
 
-          {/* Right CTA */}
-          <div className="hidden lg:block">
+          {/* Let's Talk CTA button (Desktop) */}
+          <div className="hidden lg:flex items-center">
             <a
               href="mailto:sehariftikhar187@gmail.com"
               onClick={handleConnectClick}
+              className="group"
             >
-              <button className="my-button-1 text-sm cursor-pointer">
+              <button className="my-button-1 cursor-pointer">
                 Let&apos;s Connect ✦
               </button>
             </a>
           </div>
 
           {/* Mobile / Tablet Hamburger */}
-          <div className="lg:hidden flex items-center">
+          <div className="lg:hidden flex items-center shrink-0">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`toggle2 ${mobileMenuOpen ? "active" : ""}`}

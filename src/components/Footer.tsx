@@ -63,7 +63,7 @@ export function Footer() {
 
   return (
     <footer
-      className="w-full relative pt-16 pb-10 text-white"
+      className="w-full relative pt-16 pb-10 text-white overflow-hidden"
       style={{
         background: "linear-gradient(180deg, #07101f 0%, #030814 100%)",
         borderTop: "1px solid rgba(212, 175, 55, 0.22)",
@@ -79,7 +79,7 @@ export function Footer() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12 relative z-10">
         {/* 4 Equal-Width Balanced Columns Grid with Smooth Staggered Reveal */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-12 border-b border-white/10 items-start reveal-up stagger">
           
@@ -298,7 +298,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()}{" "}
             <span className="font-bold text-[#D4AF37]">Sehar Iftikhar</span>. All rights reserved.
           </div>
-          <div className="order-1 sm:order-2 text-center sm:text-right whitespace-nowrap text-[10px] sm:text-xs">
+          <div className="order-1 sm:order-2 text-center sm:text-right text-[10px] sm:text-xs max-w-full">
             Built with <span className="text-[#D4AF37]">✦</span> HTML, CSS, JS, OpenAI, Antigravity &amp; WordPress
           </div>
         </div>
@@ -310,13 +310,13 @@ export function Footer() {
           id="scrollToTopBtn"
           onClick={scrollToTop}
           aria-label="Scroll to Top"
-          className="fixed bottom-6 right-6 z-40 p-3 rounded-full text-[#050c1a] font-bold shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 p-2.5 sm:p-3 rounded-full text-[#050c1a] font-bold shadow-2xl transition-all duration-300 hover:scale-110 cursor-pointer"
           style={{
             background: "linear-gradient(135deg, #D4AF37, #F0C842)",
             boxShadow: "0 8px 25px rgba(212, 175, 55, 0.5)",
           }}
         >
-          <ArrowUp className="w-5 h-5" />
+          <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
       )}
     </footer>

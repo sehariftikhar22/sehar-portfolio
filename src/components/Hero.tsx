@@ -305,7 +305,7 @@ function TechConstellationSphere() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[560px] lg:max-w-[620px] xl:max-w-[660px] aspect-square flex items-center justify-center select-none"
+      className="relative w-full max-w-[300px] min-[380px]:max-w-[420px] sm:max-w-[560px] lg:max-w-[620px] xl:max-w-[660px] aspect-square flex items-center justify-center select-none overflow-hidden"
     >
       {/* Background Radial Glow Blooming */}
       <div
@@ -336,30 +336,30 @@ function TechConstellationSphere() {
 
       {/* Floating Status Pill 1: Top Right */}
       <div
-        className="absolute -top-1 sm:top-1 right-0 sm:right-2 z-30 flex items-center gap-2 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-2xl transition-transform hover:scale-105"
+        className="absolute -top-1 sm:top-1 right-0 sm:right-2 z-30 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full backdrop-blur-md shadow-2xl transition-transform hover:scale-105 max-w-[80%]"
         style={{
           background: "rgba(10, 22, 40, 0.88)",
           border: "1.5px solid rgba(212, 175, 55, 0.45)",
           boxShadow: "0 0 20px rgba(212, 175, 55, 0.25)",
         }}
       >
-        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-        <span className="text-[11px] font-mono font-bold text-white tracking-wide">
+        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+        <span className="text-[10px] sm:text-[11px] font-mono font-bold text-white tracking-wide truncate">
           AI &amp; Full Stack Solutions
         </span>
       </div>
 
       {/* Floating Status Pill 2: Bottom Left */}
       <div
-        className="absolute bottom-1 sm:bottom-3 left-0 sm:left-2 z-30 flex items-center gap-2 px-3.5 py-1.5 rounded-full backdrop-blur-md shadow-2xl transition-transform hover:scale-105"
+        className="absolute bottom-1 sm:bottom-3 left-0 sm:left-2 z-30 flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full backdrop-blur-md shadow-2xl transition-transform hover:scale-105 max-w-[80%]"
         style={{
           background: "rgba(10, 22, 40, 0.88)",
           border: "1.5px solid rgba(6, 182, 212, 0.4)",
           boxShadow: "0 0 20px rgba(6, 182, 212, 0.2)",
         }}
       >
-        <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-        <span className="text-[11px] font-mono font-bold text-cyan-300 tracking-wide">
+        <Sparkles className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+        <span className="text-[10px] sm:text-[11px] font-mono font-bold text-cyan-300 tracking-wide truncate">
           14+ Verified Projects
         </span>
       </div>
@@ -368,7 +368,7 @@ function TechConstellationSphere() {
       <svg
         suppressHydrationWarning
         viewBox="0 0 600 600"
-        className="w-full h-full relative z-10 overflow-visible"
+        className="w-full h-full relative z-10 overflow-hidden"
         style={{ filter: "drop-shadow(0 15px 35px rgba(0,0,0,0.6))" }}
       >
         <defs>
@@ -612,37 +612,37 @@ export function Hero() {
 
       {/* Subtle radial glow behind hero */}
       <div
-        className="absolute top-1/2 right-[15%] -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+        className="absolute top-1/2 right-0 sm:right-[15%] -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full pointer-events-none overflow-hidden"
         style={{ background: "radial-gradient(circle, rgba(212,175,55,0.08) 0%, transparent 70%)", zIndex: 1 }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-12 relative z-10 w-full">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-8">
 
           {/* ── Left Column: Intro & Bio ── */}
           <div className="w-full lg:w-7/12 flex flex-col justify-center reveal-left">
             {/* Text Content */}
-            <div className="flex-1">
+            <div className="flex-1 w-full max-w-full">
               {/* Open to hire badge */}
-              <div className="hire-badge mb-5 inline-flex items-center whitespace-nowrap reveal-down delay-100">
-                <span className="hire-dot shrink-0" />
-                <span>AI WEB DEVELOPER · WORDPRESS DEVELOPER</span>
+              <div className="hire-badge mb-4 sm:mb-5 inline-flex items-center max-w-full text-[10px] min-[380px]:text-xs reveal-down delay-100 px-3 py-1.5">
+                <span className="hire-dot shrink-0 mr-1.5" />
+                <span className="truncate min-[360px]:whitespace-normal">AI WEB DEVELOPER · WORDPRESS DEVELOPER</span>
               </div>
 
               <p
-                className="text-base sm:text-lg font-semibold tracking-widest mb-2 uppercase reveal-down delay-150"
+                className="text-sm sm:text-base md:text-lg font-semibold tracking-widest mb-2 uppercase reveal-down delay-150"
                 style={{ color: "rgba(212,175,55,0.7)" }}
               >
                 Hi There 👋
               </p>
 
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[44px] 2xl:text-5xl font-black tracking-tight mb-6 text-white leading-tight min-h-[44px] sm:min-h-[52px] lg:min-h-[60px] flex items-center whitespace-nowrap reveal-down delay-200">
+              <h1 className="text-xl min-[360px]:text-2xl sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[44px] 2xl:text-5xl font-black tracking-tight mb-5 sm:mb-6 text-white leading-tight min-h-[40px] sm:min-h-[52px] lg:min-h-[60px] flex flex-wrap items-center reveal-down delay-200">
                 <span className="shrink-0">I&apos;M&nbsp;</span>
-                <span className="gold-shimmer shrink-0">{currentText}</span>
+                <span className="gold-shimmer break-words">{currentText}</span>
                 <span className="cursor-blink ml-1 text-[#D4AF37] shrink-0">|</span>
               </h1>
 
-              <p className="text-sm sm:text-base text-white leading-relaxed mb-8 max-w-xl font-normal reveal-up delay-250">
+              <p className="text-xs sm:text-sm md:text-base text-white leading-relaxed mb-6 sm:mb-8 max-w-xl font-normal reveal-up delay-250">
                 Recently graduated and trained through a hands-on{" "}
                 <strong className="font-semibold text-white">AI Web Developer internship</strong> at{" "}
                 <strong className="font-bold text-[#D4AF37]">Hywiz Technology</strong>, Burewala. I build
@@ -651,11 +651,11 @@ export function Hero() {
                 automation systems.
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-row items-center gap-2.5 sm:gap-4 mb-8 reveal-up delay-300 w-full sm:w-auto">
+              {/* CTA Buttons - 2 in 1 Row */}
+              <div className="flex flex-row items-center gap-2 sm:gap-4 mb-6 sm:mb-8 reveal-up delay-300 w-full sm:w-auto">
                 <a
                   href="#portfolio"
-                  className="flex-1 sm:flex-initial my-button-2 !py-2.5 sm:!py-3 !px-3 sm:!px-6 !text-xs sm:!text-sm font-bold gap-1.5 sm:gap-2 shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40 cursor-pointer justify-center whitespace-nowrap h-11 sm:h-auto"
+                  className="flex-1 sm:flex-initial my-button-2 !py-2.5 sm:!py-3 !px-2.5 sm:!px-6 !text-[11px] min-[360px]:!text-xs sm:!text-sm font-bold gap-1 sm:gap-2 shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40 cursor-pointer justify-center text-center h-11 sm:h-auto whitespace-nowrap"
                 >
                   <Briefcase className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
                   <span>View My Work</span>
@@ -665,7 +665,7 @@ export function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   download="Sehar_Iftikhar_CV.pdf"
-                  className="flex-1 sm:flex-initial my-button-4 !py-2.5 sm:!py-3 !px-3 sm:!px-6 !text-xs sm:!text-sm font-bold gap-1.5 sm:gap-2 cursor-pointer hover:border-[#D4AF37] justify-center whitespace-nowrap h-11 sm:h-auto"
+                  className="flex-1 sm:flex-initial my-button-4 !py-2.5 sm:!py-3 !px-2.5 sm:!px-6 !text-[11px] min-[360px]:!text-xs sm:!text-sm font-bold gap-1 sm:gap-2 cursor-pointer hover:border-[#D4AF37] justify-center text-center h-11 sm:h-auto whitespace-nowrap"
                   onClick={() => {
                     if (typeof window !== "undefined") {
                       window.open("/sehar-iftikhar-cv.pdf", "_blank");
@@ -678,25 +678,25 @@ export function Hero() {
               </div>
 
               {/* Credentials Grid under buttons */}
-              <div className="pt-6 border-t border-white/10 grid grid-cols-3 gap-3 sm:gap-4 max-w-xl reveal-up delay-350">
+              <div className="pt-5 sm:pt-6 border-t border-white/10 grid grid-cols-1 min-[360px]:grid-cols-3 gap-3 sm:gap-4 max-w-xl reveal-up delay-350">
                 <div className="flex flex-col">
-                  <span className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-1">
+                  <span className="text-[9px] sm:text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-0.5 sm:mb-1">
                     BACKGROUND
                   </span>
                   <span className="text-xs sm:text-sm md:text-base font-bold text-white tracking-tight">
                     IT Graduate
                   </span>
                 </div>
-                <div className="flex flex-col border-l border-white/10 pl-3 sm:pl-4">
-                  <span className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-1">
+                <div className="flex flex-col border-t min-[360px]:border-t-0 min-[360px]:border-l border-white/10 pt-2 min-[360px]:pt-0 min-[360px]:pl-3 sm:pl-4">
+                  <span className="text-[9px] sm:text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-0.5 sm:mb-1">
                     INTERNSHIP
                   </span>
                   <span className="text-xs sm:text-sm md:text-base font-bold text-white tracking-tight">
                     Hywiz Technology
                   </span>
                 </div>
-                <div className="flex flex-col border-l border-white/10 pl-3 sm:pl-4">
-                  <span className="text-[10px] sm:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-1">
+                <div className="flex flex-col border-t min-[360px]:border-t-0 min-[360px]:border-l border-white/10 pt-2 min-[360px]:pt-0 min-[360px]:pl-3 sm:pl-4">
+                  <span className="text-[9px] sm:text-[10px] md:text-xs font-mono uppercase tracking-widest text-[#D4AF37]/80 mb-0.5 sm:mb-1">
                     PRIMARY FOCUS
                   </span>
                   <span className="text-xs sm:text-sm md:text-base font-bold text-white tracking-tight">

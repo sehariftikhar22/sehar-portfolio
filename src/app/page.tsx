@@ -15,12 +15,12 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#050c1a] text-[#EDF2F7] relative">
+    <div className="min-h-screen flex flex-col bg-[#050c1a] text-[#EDF2F7] relative w-full max-w-full overflow-x-hidden">
       {/* 1. Dual Nav Header */}
       <Header />
 
       {/* 2. Main Page Content */}
-      <main id="main" className="flex-1 w-full">
+      <main id="main" className="flex-1 w-full max-w-full overflow-x-hidden">
         {/* Hero Section with Ocean Waves & Typewriter */}
         <Hero />
 

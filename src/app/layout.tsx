@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const viewport = {
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
   themeColor: "#050c1a",
 };
 
@@ -46,7 +51,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="min-h-screen bg-[#050c1a] text-[#EDF2F7] antialiased selection:bg-[#D4AF37] selection:text-[#050c1a] relative"
+        className="min-h-screen bg-[#050c1a] text-[#EDF2F7] antialiased selection:bg-[#D4AF37] selection:text-[#050c1a] relative overflow-x-hidden w-full max-w-full"
         suppressHydrationWarning
       >
         <ScrollAnimationProvider />
