@@ -178,12 +178,12 @@ export function CallToAction({ type }: CallToActionProps) {
               Currently open to full-time roles and high-impact engineering opportunities where I can contribute my practical web development, AI integration, and problem-solving skills as part of a high-performing engineering team.
             </p>
 
-            {/* Tags / Pills — Single line */}
-            <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-2 sm:gap-2.5 md:gap-3 max-w-5xl mx-auto mb-9 reveal-up delay-200 relative z-10">
+            {/* Desktop Tags Layout (sm and up) */}
+            <div className="hidden sm:flex flex-wrap justify-center items-center gap-2.5 md:gap-3 max-w-5xl mx-auto mb-9 reveal-up delay-200 relative z-10">
               {roles.map((role) => (
                 <span
                   key={role}
-                  className="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full text-slate-200 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-300 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:scale-105 cursor-default select-none shadow-sm"
+                  className="px-4 py-2.5 rounded-full text-slate-200 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-300 hover:border-[#D4AF37] hover:text-[#D4AF37] hover:scale-105 cursor-default select-none shadow-sm"
                   style={{
                     background: "rgba(255, 255, 255, 0.05)",
                     border: "1px solid rgba(255, 255, 255, 0.14)",
@@ -193,6 +193,72 @@ export function CallToAction({ type }: CallToActionProps) {
                   {role}
                 </span>
               ))}
+            </div>
+
+            {/* Mobile Modern Staggered Layout (<sm: 1 Center, followed by 2 Split Rows) */}
+            <div className="flex sm:hidden flex-col items-center gap-2 w-full max-w-[285px] mx-auto mb-8 reveal-up delay-200 relative z-10">
+              {/* Row 1: 1 Featured Badge in Center */}
+              <div className="flex justify-center w-full">
+                <span
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] min-[350px]:text-[11px] font-semibold text-[#D4AF37] whitespace-nowrap shadow-sm"
+                  style={{
+                    background: "rgba(212, 175, 55, 0.1)",
+                    border: "1px solid rgba(212, 175, 55, 0.35)",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
+                  {roles[0]}
+                </span>
+              </div>
+
+              {/* Row 2: 2 Badges (1 Start, 1 End) */}
+              <div className="flex items-center justify-between gap-1.5 w-full">
+                <span
+                  className="flex-1 text-center px-2 py-1.5 rounded-full text-slate-200 text-[9.5px] min-[350px]:text-[10px] font-semibold truncate shadow-sm"
+                  style={{
+                    background: "rgba(255, 255, 255, 0.05)",
+                    border: "1px solid rgba(255, 255, 255, 0.14)",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  {roles[1]}
+                </span>
+                <span
+                  className="flex-1 text-center px-2 py-1.5 rounded-full text-slate-200 text-[9.5px] min-[350px]:text-[10px] font-semibold truncate shadow-sm"
+                  style={{
+                    background: "rgba(255, 255, 255, 0.05)",
+                    border: "1px solid rgba(255, 255, 255, 0.14)",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  {roles[4]}
+                </span>
+              </div>
+
+              {/* Row 3: 2 Badges (1 Start, 1 End) */}
+              <div className="flex items-center justify-between gap-1.5 w-full">
+                <span
+                  className="flex-1 text-center px-2 py-1.5 rounded-full text-slate-200 text-[9.5px] min-[350px]:text-[10px] font-semibold truncate shadow-sm"
+                  style={{
+                    background: "rgba(255, 255, 255, 0.05)",
+                    border: "1px solid rgba(255, 255, 255, 0.14)",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  {roles[2]}
+                </span>
+                <span
+                  className="flex-1 text-center px-2 py-1.5 rounded-full text-slate-200 text-[9.5px] min-[350px]:text-[10px] font-semibold truncate shadow-sm"
+                  style={{
+                    background: "rgba(255, 255, 255, 0.05)",
+                    border: "1px solid rgba(255, 255, 255, 0.14)",
+                    backdropFilter: "blur(8px)",
+                  }}
+                >
+                  {roles[3]}
+                </span>
+              </div>
             </div>
 
             {/* Action Button */}
