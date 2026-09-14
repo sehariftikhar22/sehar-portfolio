@@ -78,7 +78,7 @@ export function Header() {
           </a>
 
           {/* Desktop nav links */}
-          <div className="hidden md:flex items-center space-x-7 lg:space-x-9">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -102,7 +102,7 @@ export function Header() {
           </div>
 
           {/* Right CTA */}
-          <div className="hidden sm:block">
+          <div className="hidden lg:block">
             <a href="mailto:sehariftikhar.dev@gmail.com">
               <button className="my-button-1 text-sm">
                 Let&apos;s Connect ✦
@@ -110,8 +110,8 @@ export function Header() {
             </a>
           </div>
 
-          {/* Mobile Hamburger */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile / Tablet Hamburger */}
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`toggle2 ${mobileMenuOpen ? "active" : ""}`}
@@ -124,10 +124,10 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* Mobile / Tablet Dropdown */}
         {mobileMenuOpen && (
           <div
-            className="md:hidden px-6 py-5 flex flex-col space-y-4"
+            className="lg:hidden px-6 py-5 flex flex-col space-y-4"
             style={{
               background: "rgba(5, 12, 26, 0.98)",
               borderTop: "1px solid rgba(212, 175, 55, 0.15)",
