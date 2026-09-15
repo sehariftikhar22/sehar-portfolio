@@ -558,7 +558,6 @@ export function Hero() {
     "AI WEB DEVELOPER",
     "WORDPRESS DEVELOPER",
     "FULL STACK DEVELOPER",
-    "AI AUTOMATION ENGINEER",
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
