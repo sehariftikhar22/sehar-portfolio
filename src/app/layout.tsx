@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 };
 
 import { ScrollAnimationProvider } from "@/components/ScrollAnimationProvider";
+import { CustomCursor } from "@/components/CustomCursor";
 
 export default function RootLayout({
   children,
@@ -54,6 +55,7 @@ export default function RootLayout({
         className="min-h-screen bg-[#050c1a] text-[#EDF2F7] antialiased selection:bg-[#D4AF37] selection:text-[#050c1a] relative overflow-x-hidden w-full max-w-full"
         suppressHydrationWarning
       >
+        <CustomCursor />
         <ScrollAnimationProvider />
         {children}
       </body>
